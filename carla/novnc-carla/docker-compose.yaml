@@ -12,8 +12,9 @@ services:
       - ${PWD}/carla-all:/carla:r
     environment:
       - USERNAME=carla
-      - USERID=1001
+      - USERID=1000
       - RESOLUTION=1280x720
+      - HTTP_PASSWORD=smartcity
     networks:
       - carla-clients
     restart: unless-stopped
@@ -29,8 +30,9 @@ services:
       - ${PWD}/carla-all:/carla:r
     environment:
       - USERNAME=carla
-      - USERID=1001
+      - USERID=1000
       - RESOLUTION=1280x720
+      - HTTP_PASSWORD=smartcity
     networks:
       - carla-clients
     restart: unless-stopped
@@ -46,8 +48,9 @@ services:
       - ${PWD}/carla-all:/carla:r
     environment:
       - USERNAME=carla
-      - USERID=1001
+      - USERID=1000
       - RESOLUTION=1280x720
+      - HTTP_PASSWORD=smartcity
     networks:
       - carla-clients
     restart: unless-stopped
@@ -63,8 +66,9 @@ services:
       - ${PWD}/carla-all:/carla:r
     environment:
       - USERNAME=carla
-      - USERID=1001
+      - USERID=1000
       - RESOLUTION=1280x720
+      - HTTP_PASSWORD=smartcity
     networks:
       - carla-clients
     restart: unless-stopped
@@ -80,8 +84,9 @@ services:
       - ${PWD}/carla-all:/carla:r
     environment:
       - USERNAME=carla
-      - USERID=1001
+      - USERID=1000
       - RESOLUTION=1280x720
+      - HTTP_PASSWORD=smartcity
     networks:
       - carla-clients
     restart: unless-stopped
@@ -97,8 +102,9 @@ services:
       - ${PWD}/carla-all:/carla:r
     environment:
       - USERNAME=carla
-      - USERID=1001
+      - USERID=1000
       - RESOLUTION=1280x720
+      - HTTP_PASSWORD=smartcity
     networks:
       - carla-clients
     restart: unless-stopped
@@ -114,8 +120,9 @@ services:
       - ${PWD}/carla-all:/carla:r
     environment:
       - USERNAME=carla
-      - USERID=1001
+      - USERID=1000
       - RESOLUTION=1280x720
+      - HTTP_PASSWORD=smartcity
     networks:
       - carla-clients
     restart: unless-stopped
