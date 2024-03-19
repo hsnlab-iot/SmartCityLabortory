@@ -102,12 +102,12 @@ def process_checkall():
         with open("labels/image%.6d.txt" % cai, "w") as file:
             for i in lights:
                 cv2.rectangle(bgri, (i[0], i[1]), (i[0]+i[2], i[1]+i[3]), (0,255,0), 2)
-                file.write("0, %.6f, %.6f, %.6f, %.6f\n" % ((i[0]+i[1]/2.0)/IM_WIDTH, (i[1]+i[3]/2.0)/IM_HEIGHT, i[1]/IM_WIDTH, i[3]/IM_HEIGHT))
+                file.write("0 %.6f %.6f %.6f %.6f\n" % ((i[0]+i[2]/2.0)/IM_WIDTH, (i[1]+i[3]/2.0)/IM_HEIGHT, i[2]/IM_WIDTH, i[3]/IM_HEIGHT))
             for i in signs:
                 cv2.rectangle(bgri, (i[0], i[1]), (i[0]+i[2], i[1]+i[3]), (0,0,255), 2)
-                file.write("1, %.6f, %.6f, %.6f, %.6f\n" % ((i[0]+i[1]/2.0)/IM_WIDTH, (i[1]+i[3]/2.0)/IM_HEIGHT, i[1]/IM_WIDTH, i[3]/IM_HEIGHT))
+                file.write("1 %.6f %.6f %.6f %.6f\n" % ((i[0]+i[2]/2.0)/IM_WIDTH, (i[1]+i[3]/2.0)/IM_HEIGHT, i[2]/IM_WIDTH, i[3]/IM_HEIGHT))
 
-        r = cv2.imwrite("images/image%.6d_boxes.jpg" % cai, bgri)
+        r = cv2.imwrite("boxes/image%.6d.jpg" % cai, bgri)
         r = cv2.imwrite("images/image%.6d.jpg" % cai, bgri_o)
         found = True
 
@@ -152,10 +152,6 @@ try:
     world = client.get_world()
     actor_list = world.get_actors()
     blueprint_library = world.get_blueprint_library()
-
-
-    for speed_sign in actor_list.filter('traffic.speed_limit.*'):
-        print(speed_sign.get_location())
 
     vehicles = actor_list.filter('vehicle.*')
     if len(vehicles) == 0:
